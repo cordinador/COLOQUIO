@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Certificado Tecsup</title>
+    <style>
+        /* Estilo base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        .certificate-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Fondo con carrusel */
+        .background-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 700%; /* 7 imágenes, cada una ocupa el 100% / 7 */
+            height: 100%;
+            display: flex;
+            transition: transform 2.5s ease; /* Desplazamiento suave */
+        }
+
+        .background-carousel img {
+            width: 14.2857%; /* Cada imagen ocupa 1/7 del ancho */
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certificate-content {
+    position: relative;
+    z-index: 2;
+    width: 30%;
+    min-width: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 100px;
+    height: 100%;
+}
+/* Asegura que los párrafos dentro de .certificate-content tengan separación entre ellos */
+.certificate-content p {
+    margin-bottom: 15px;  /* Espacio entre los párrafos */
+    line-height: 1.6;     /* Espacio entre las líneas de cada párrafo */
+}
+
+/* Separar las líneas de texto dentro de <li> en listas si las usas */
+.certificate-content ul li {
+    margin-bottom: 10px;   /* Espacio entre cada línea de lista */
+    line-height: 2;      /* Espacio entre las líneas dentro de la lista */
+}
+
+/* Resaltar el texto dentro de span (si es necesario) */
+.certificate-content span {
+    font-weight: bold; /* Resalta el texto con negrita */
+}
+
+.certificate-content h1 {
+    color: #00cc0070;
+    margin: 0 0 10px;
+    font-size: 1rem;
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
+
+        .certificate-content p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .certificate-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .certificate-content ul li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+    .certificate-content ul li::before {
+            content: "✔"; /* El ícono de la marca de verificación */
+            color: white;
+            background-color: #007ACC; /* Color del círculo */
+            width: 20px; /* Ancho del círculo */
+            height: 20px; /* Altura del círculo */
+            border-radius: 50%; /* Hace el círculo redondo */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 14px; /* Tamaño del ícono */
+        }
+
+        /* Pie de página */
+        .certificate-footer {
+            text-align: center;
+            margin-top: -15px;
+        }
+
+        .certificate-footer img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <!-- Fondo con carrusel -->
+        <div class="background-carousel">
+            <img src="background1.jpg" alt="Fondo 1">
+            <img src="background2.jpg" alt="Fondo 2">
+            <img src="background3.jpg" alt="Fondo 3">
+            <img src="background4.jpg" alt="Fondo 4">
+            <img src="background5.jpg" alt="Fondo 5">
+            <img src="background6.jpg" alt="Fondo 6">
+            <img src="background7.jpg" alt="Fondo 7">
+        </div>
+        
+        <!-- Contenido del texto -->
+        <div class="certificate-content">
+            <div style="text-align: center;">
+            <img src="https://qu.ax/EAGTC.png" alt="Icono del certificado" style="width: 40%;">
+                <h1>FACULTAD DE INGENIERÍA </h1>
+                <h1>ESCUELA PROFESIONAL DE INGENIERÍA AMBIENTAL</h1>
+                <p>
+                    Da conformidad que el certificado con código:
+                    <strong><br>4-2024-FI-VRI-UTEA</strong>
+                    es válido
+                </p>
+            <ul>
+                <li><span>Alumno: </span> Jesús Napoleón Tamayo Achulli</li>
+                <li><span>Evento: </span> III Coloquio Estudiantil</li>
+                <li><span>Horas: </span> 24 Académicas</li>
+                <li><span>Inicio: </span> 04/09/2024</li>
+                <li><span>Fin: </span> 05/109/2024</li>
+            </ul>
+            <div class="certificate-footer">
+                <img src="https://qu.ax/YwObN.png" alt="Icono del certificado" style="width: 30%;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carrusel de imágenes de fondo
+        const carousel = document.querySelector('.background-carousel');
+        let currentIndex = 0;
+        let direction = 'left';
+        const totalImages = document.querySelectorAll('.background-carousel img').length;
+
+        setInterval(() => {
+            if (direction === 'left') {
+                // Mover a la siguiente imagen
+                currentIndex++;
+                if (currentIndex >= totalImages) {
+                    currentIndex = totalImages - 1;
+                    direction = 'right'; // Cambiar a la dirección 'right' al llegar al final
+                }
+            } else {
+                // Regresar a la imagen anterior
+                currentIndex--;
+                if (currentIndex <= 0) {
+                    currentIndex = 0;
+                    direction = 'left'; // Cambiar a la dirección 'left' al llegar al principio
+                }
+            }
+
+            // Aplicar el desplazamiento de las imágenes
+            carousel.style.transform = `translateX(-${(currentIndex / totalImages) * 100}%)`;
+        }, 2000); // Cambiar cada 2 segundos
+    </script>
+</body>
+</html>
