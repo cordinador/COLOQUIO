@@ -43,75 +43,53 @@
         }
 
         .certificate-content {
-    position: relative;
-    z-index: 2;
-    width: 30%;
-    min-width: 50px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-right: 100px;
-    height: 100%;
-}
-/* Asegura que los párrafos dentro de .certificate-content tengan separación entre ellos */
-.certificate-content p {
-    margin-bottom: 15px;  /* Espacio entre los párrafos */
-    line-height: 1.6;     /* Espacio entre las líneas de cada párrafo */
-}
-
-/* Separar las líneas de texto dentro de <li> en listas si las usas */
-.certificate-content ul li {
-    margin-bottom: 10px;   /* Espacio entre cada línea de lista */
-    line-height: 2;      /* Espacio entre las líneas dentro de la lista */
-}
-
-/* Resaltar el texto dentro de span (si es necesario) */
-.certificate-content span {
-    font-weight: bold; /* Resalta el texto con negrita */
-}
-
-.certificate-content h1 {
-    color: #00cc0070;
-    margin: 0 0 10px;
-    font-size: 1rem;
-    text-align: center; /* Centrar el texto horizontalmente */
-}
-
-
-        .certificate-content p {
-            margin: 5px 0;
-            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            width: 30%;
+            min-width: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-right: 100px;
+            height: 100%;
         }
 
-        .certificate-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
+        .certificate-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .certificate-content ul li {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 2;
         }
 
-    .certificate-content ul li::before {
-            content: "✔"; /* El ícono de la marca de verificación */
+        .certificate-content span {
+            font-weight: bold;
+        }
+
+        .certificate-content h1 {
+            color: #00cc0070;
+            margin: 0 0 10px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .certificate-content ul li::before {
+            content: "✔";
             color: white;
-            background-color: #007ACC; /* Color del círculo */
-            width: 20px; /* Ancho del círculo */
-            height: 20px; /* Altura del círculo */
-            border-radius: 50%; /* Hace el círculo redondo */
+            background-color: #007ACC;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             margin-right: 10px;
-            font-size: 14px; /* Tamaño del ícono */
+            font-size: 14px;
         }
 
-        /* Pie de página */
         .certificate-footer {
             text-align: center;
             margin-top: -15px;
@@ -119,6 +97,47 @@
 
         .certificate-footer img {
             width: 100px;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .certificate-container {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .certificate-content {
+                width: 90%;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .background-carousel img {
+                width: 100%;
+                height: auto;
+            }
+
+            .certificate-footer img {
+                width: 60px;
+            }
+
+            .certificate-content h1 {
+                font-size: 0.9rem;
+            }
+
+            .certificate-content ul li {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .certificate-content {
+                width: 50%;
+            }
+
+            .certificate-content h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -138,29 +157,29 @@
         <!-- Contenido del texto -->
         <div class="certificate-content">
             <div style="text-align: center;">
-            <img src="https://qu.ax/EAGTC.png" alt="Icono del certificado" style="width: 40%;">
-                <h1>FACULTAD DE INGENIERÍA </h1>
+                <img src="https://qu.ax/EAGTC.png" alt="Icono del certificado" style="width: 40%;">
+                <h1>FACULTAD DE INGENIERÍA</h1>
                 <h1>ESCUELA PROFESIONAL DE INGENIERÍA AMBIENTAL</h1>
                 <p>
                     Da conformidad que el certificado con código:
                     <strong><br>4-2024-FI-VRI-UTEA</strong>
                     es válido
                 </p>
-            <ul>
-                <li><span>Alumno: </span> Jesús Napoleón Tamayo Achulli</li>
-                <li><span>Evento: </span> III Coloquio Estudiantil</li>
-                <li><span>Horas: </span> 24 Académicas</li>
-                <li><span>Inicio: </span> 04/09/2024</li>
-                <li><span>Fin: </span> 05/109/2024</li>
-            </ul>
-            <div class="certificate-footer">
-                <img src="https://qu.ax/YwObN.png" alt="Icono del certificado" style="width: 30%;">
+                <ul>
+                    <li><span>Alumno: </span> Jesús Napoleón Tamayo Achulli</li>
+                    <li><span>Evento: </span> III Coloquio Estudiantil</li>
+                    <li><span>Horas: </span> 24 Académicas</li>
+                    <li><span>Inicio: </span> 04/09/2024</li>
+                    <li><span>Fin: </span> 05/109/2024</li>
+                </ul>
+                <div class="certificate-footer">
+                    <img src="https://qu.ax/YwObN.png" alt="Icono del certificado" style="width: 30%;">
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Carrusel de imágenes de fondo
         const carousel = document.querySelector('.background-carousel');
         let currentIndex = 0;
         let direction = 'left';
@@ -168,24 +187,20 @@
 
         setInterval(() => {
             if (direction === 'left') {
-                // Mover a la siguiente imagen
                 currentIndex++;
                 if (currentIndex >= totalImages) {
                     currentIndex = totalImages - 1;
-                    direction = 'right'; // Cambiar a la dirección 'right' al llegar al final
+                    direction = 'right';
                 }
             } else {
-                // Regresar a la imagen anterior
                 currentIndex--;
                 if (currentIndex <= 0) {
                     currentIndex = 0;
-                    direction = 'left'; // Cambiar a la dirección 'left' al llegar al principio
+                    direction = 'left';
                 }
             }
-
-            // Aplicar el desplazamiento de las imágenes
             carousel.style.transform = `translateX(-${(currentIndex / totalImages) * 100}%)`;
-        }, 2000); // Cambiar cada 2 segundos
+        }, 2000);
     </script>
 </body>
 </html>
